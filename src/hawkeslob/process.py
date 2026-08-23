@@ -71,3 +71,21 @@ def log_likelihood(
 def branching_ratio(alpha: float, beta: float) -> float:
     """n = alpha/beta: expected children per event; < 1 required for stationarity."""
     return alpha / beta
+
+
+def cluster_events(times: np.ndarray, eps: float = 0.1) -> np.ndarray:
+    """Merge near-simultaneous prints (gap < eps sec) into one event.
+
+    Raw exchange tapes contain bursts of split-order prints with identical
+    timestamps; without clustering the MLE pins n* at the critical boundary
+    chasing this mechanical burstiness. eps=0.1s is the standard choice for
+    crypto aggTrades.
+    """
+    times = np.sort(np.asarray(times, dtype=float))
+    if times.size == 0:
+        return times
+    keep = [times[0]]
+    for t in times[1:]:
+        if t - keep[-1] >= eps:
+            keep.append(t)
+    return np.asarray(keep)
