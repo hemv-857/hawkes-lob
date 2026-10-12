@@ -1,5 +1,7 @@
 # hawkes-lob
 
+<a href="https://github.com/hemv-857/hawkes-lob/actions/workflows/ci.yml"><img src="https://github.com/hemv-857/hawkes-lob/actions/workflows/ci.yml/badge.svg" alt="hawkes-lob CI"></a> <a href="https://github.com/hemv-857/hawkes-lob/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a> <img src="https://img.shields.io/badge/Python-3776AB.svg" alt="Python">
+
 Univariate **exponential Hawkes processes** for limit-order-book trade arrivals:
 simulation (Ogata thinning), exact O(N) maximum likelihood, standard errors from
 the observed information, and goodness-of-fit via the time-rescaling theorem.
@@ -42,3 +44,7 @@ python -m hawkeslob.cli fit                      # synthetic demo fit
   and power-law kernels are the natural extensions.
 - Standard errors assume regularity of the observed information; check with
   parametric bootstrap before quoting them in the paper.
+
+## License
+
+[LICENSE](https://github.com/hemv-857/hawkes-lob/blob/master/LICENSE) — see the file for the full text.
