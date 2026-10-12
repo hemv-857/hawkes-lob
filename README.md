@@ -45,6 +45,10 @@ python -m hawkeslob.cli fit                      # synthetic demo fit
 - Standard errors assume regularity of the observed information; check with
   parametric bootstrap before quoting them in the paper.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 [LICENSE](https://github.com/hemv-857/hawkes-lob/blob/master/LICENSE) — see the file for the full text.
